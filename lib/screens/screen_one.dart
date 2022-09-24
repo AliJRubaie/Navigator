@@ -1,17 +1,49 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
-class ScreenOne extends StatelessWidget {
-  const ScreenOne({Key? key}) : super(key: key);
+class ScreenOne extends StatefulWidget {
+  ScreenOne({Key? key}) : super(key: key);
+  @override
+  State<ScreenOne> createState() => _ScreenOneState();
+}
 
+String myGroupValue = "gender";
+
+class _ScreenOneState extends State<ScreenOne> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
-        child: Text(
-          "Welcome to screen #1",
-          style: TextStyle(fontSize: 35),
-        ),
+      body: Column(
+        children: [
+          Text(
+            "Select your gender",
+            style: TextStyle(fontSize: 35),
+          ),
+          RadioListTile(
+            title: Text("Male", style: TextStyle(fontSize: 20)),
+            subtitle: Text("Man"),
+            secondary: Icon(Icons.man),
+            value: "male",
+            groupValue: myGroupValue,
+            onChanged: (val) {
+              setState(() {
+                myGroupValue = val!;
+              });
+            },
+          ),
+          RadioListTile(
+            title: Text("Female", style: TextStyle(fontSize: 25)),
+            subtitle: Text("Lady"),
+            secondary: Icon(Icons.woman),
+            value: "female",
+            groupValue: myGroupValue,
+            onChanged: (val) {
+              setState(() {
+                myGroupValue = val!;
+              });
+            },
+          )
+        ],
       ),
     );
   }
