@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
 
+import '../home.dart';
+
 class ScreenOne extends StatefulWidget {
   ScreenOne({Key? key}) : super(key: key);
   @override
@@ -42,7 +44,20 @@ class _ScreenOneState extends State<ScreenOne> {
                 myGroupValue = val!;
               });
             },
-          )
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context, MaterialPageRoute(
+                builder: (context) {
+                  return Home();
+                },
+              ));
+            },
+            child: Text(
+              "Go Home",
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
         ],
       ),
     );
