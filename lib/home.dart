@@ -12,8 +12,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    return Scaffold(
       appBar: AppBar(),
       drawer: Drawer(),
       body: Center(
@@ -40,6 +39,6 @@ class _HomeState extends State<Home> {
               child: Text("Go to screen #2", style: TextStyle(fontSize: 30))),
         ],
       )),
-    ));
+    );
   }
 }

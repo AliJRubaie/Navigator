@@ -10,7 +10,7 @@ class ScreenTwo extends StatelessWidget {
       body: Center(
         child: Text(
           "Welcome to screen #2",
-          style: TextStyle(fontSize: 40),
+          style: TextStyle(fontSize: 35),
         ),
       ),
     );
